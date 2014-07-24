@@ -62,21 +62,21 @@ module.exports = punycode;
 <a name="html%E4%BB%A3%E7%A0%81" class="anchor" href="#html%E4%BB%A3%E7%A0%81"><span class="octicon octicon-link"></span></a>html代码：</h3>
 
 <pre><code>
-	<input type="text" id="s">
-	<input type="button" value="Convert" onclick="convert()"><br/>
-	<span id="r"></span>
-	<script type="text/javascript" src="code.js"></script>
-	<script type="text/javascript">
-	function convert(){
-		var code = require('./punycode.js');
-		var s = document.getElementById('s');
-		var fr = code(s.value);
-		var r = document.getElementById('r');
-		var txt = document.createTextNode(fr);
-		r.innerText = "";
-		r.appendChild(txt);
-	}
-	</script>
+<input type="text" id="s">
+<input type="button" value="Convert" onclick="convert()"><br/>
+<span id="r"></span>
+<script type="text/javascript" src="code.js"></script>
+<script type="text/javascript">
+function convert(){
+var code = require('./punycode.js');
+var s = document.getElementById('s');
+var fr = code(s.value);
+var r = document.getElementById('r');
+var txt = document.createTextNode(fr);
+r.innerText = "";
+r.appendChild(txt);
+}
+</script>
 </code></pre>
 
 <p>
