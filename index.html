@@ -43,14 +43,14 @@
 <a name="nodejs%E4%BB%A3%E7%A0%81punycodejs%E6%96%87%E4%BB%B6" class="anchor" href="#nodejs%E4%BB%A3%E7%A0%81punycodejs%E6%96%87%E4%BB%B6"><span class="octicon octicon-link"></span></a>nodejs代码(punycode.js文件)</h3>
 
 <pre><code>var code = require('punycode');
-</code></pre>
-
-<p>function punycode(txt){
+function punycode(txt){
     var reg = /^xn--/i;
     var r = reg.test(txt)? code.toUnicode(txt):code.toASCII(txt);
     return r;
 }
-module.exports = punycode;</p>
+module.exports = punycode;
+</code></pre>
+
 
 <h3>
 <a name="%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%BC%96%E8%AF%91" class="anchor" href="#%E5%9C%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E7%BC%96%E8%AF%91"><span class="octicon octicon-link"></span></a>在命令行下编译</h3>
@@ -61,7 +61,29 @@ module.exports = punycode;</p>
 <h3>
 <a name="html%E4%BB%A3%E7%A0%81" class="anchor" href="#html%E4%BB%A3%E7%A0%81"><span class="octicon octicon-link"></span></a>html代码：</h3>
 
-<pre><code>&lt;!DOCTYPE html&gt;
+<pre><code><!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="code.js"></script>
+</head>
+<body>
+	<input type="text" id="s">
+	<input type="button" value="Convert" onclick="convert()"><br/>
+	<span id="r"></span>
+	<script type="text/javascript">
+	function convert(){
+		var code = require('./punycode.js');
+		var s = document.getElementById('s');
+		var fr = code(s.value);
+		var r = document.getElementById('r');
+		var txt = document.createTextNode(fr);
+		r.innerText = "";
+		r.appendChild(txt);
+	}
+	</script>
+</body>
+</html>
 </code></pre>
 
 <p>
