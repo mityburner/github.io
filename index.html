@@ -61,16 +61,11 @@ module.exports = punycode;
 <h3>
 <a name="html%E4%BB%A3%E7%A0%81" class="anchor" href="#html%E4%BB%A3%E7%A0%81"><span class="octicon octicon-link"></span></a>html代码：</h3>
 
-<pre><code><!DOCTYPE html>
-<html lang="zh">
-<head>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="code.js"></script>
-</head>
-<body>
+<pre><code>
 	<input type="text" id="s">
 	<input type="button" value="Convert" onclick="convert()"><br/>
 	<span id="r"></span>
+	<script type="text/javascript" src="code.js"></script>
 	<script type="text/javascript">
 	function convert(){
 		var code = require('./punycode.js');
@@ -82,8 +77,6 @@ module.exports = punycode;
 		r.appendChild(txt);
 	}
 	</script>
-</body>
-</html>
 </code></pre>
 
 <p>
